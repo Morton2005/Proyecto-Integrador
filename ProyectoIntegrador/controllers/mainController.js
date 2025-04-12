@@ -1,6 +1,10 @@
 const controller ={
-    index:function name (req,res){
-        res.render('index', { title: 'Express' });
+    index:function  (req,res){
+        res.render('index');
+    },
+
+    searchResults:function  (req,res){
+        res.render('search-results');
     }
 
 }
