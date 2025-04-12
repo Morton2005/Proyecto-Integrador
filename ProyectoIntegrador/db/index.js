@@ -1,11 +1,11 @@
 const data = {
     usuario:{
-        email:'',
-        nombreDeUsuario:'',
-        contrasenia:'',
-        fechaDeNacimiento: '',
+        email:'cukin@gmail.com',
+        nombreDeUsuario:'MortonDJ',
+        contrasenia:'morton05',
+        fechaDeNacimiento: '23/10/2005',
         dni:48011547,
-        fotoDePerfil:'',
+        fotoDePerfil:'../public/images/users/default-image.png',
         
     },
 
@@ -17,10 +17,11 @@ const data = {
             id:1,
             comentarios:[
                 {
-                    nombreDeUsuario:'',
-                    fotoDePerfil:'',
-                    texto:'',
+                    nombreDeUsuario:'Fernanditotorres96',
+                    fotoDePerfil:'../public/images/users/default-image.png',
+                    texto:'Muy bueno!',
                 }
+                
             ],
         }
     ]
