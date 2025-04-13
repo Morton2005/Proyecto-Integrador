@@ -37,7 +37,49 @@ const data = {
                 }
                 
             ],
-        }
+        },
+        {
+            imagen:'/images/products/relo3.webp',
+            nombre:'Tissot',
+            descripcion:'Reloj de calidad, color azul y gris',
+            id:3,
+            comentarios:[
+                {
+                    nombreDeUsuario:'camilalopez',
+                    fotoDePerfil:'../public/images/users/default-image.png',
+                    texto:'Genial!',
+                }
+                
+            ],
+        },
+        {
+            imagen:'/images/products/relo4.webp',
+            nombre:'Biden',
+            descripcion:'Reloj de calidad, color gris y azul',
+            id:4,
+            comentarios:[
+                {
+                    nombreDeUsuario:'maria245',
+                    fotoDePerfil:'../public/images/users/default-image.png',
+                    texto:'Buenisimo!',
+                }
+                
+            ],
+        },
+        {
+            imagen:'/images/products/relo5.jpeg',
+            nombre:'Swatch',
+            descripcion:'Reloj de calidad, color negro y rojo',
+            id:5,
+            comentarios:[
+                {
+                    nombreDeUsuario:'luis245',
+                    fotoDePerfil:'../public/images/users/default-image.png',
+                    texto:'Malisimo!',
+                }
+                
+            ],
+        },
     ]
 
 }
