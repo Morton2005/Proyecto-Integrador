@@ -3,12 +3,15 @@ let data = require('../db/index')
 
 const controller ={
     index:function  (req,res){
-        let iduscado = req.params.id;
-        let producto = data.productos;
+        let idbuscado = req.params.id;
+    let productos = data.productos;
 
+    let producto = productos[idbuscado - 1];
 
-        res.render('product', {productos: producto});
-
+        res.render('product', {
+            productoDetalle: producto,
+            productos: productos
+          });
     },
 
     add:function (req,res){
