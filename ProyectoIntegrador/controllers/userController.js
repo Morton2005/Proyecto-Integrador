@@ -1,6 +1,8 @@
+let data = require('../db/index')
+
 const controller ={
     profile:function name (req,res){
-        res.render('profile');
+            res.render('profile', {productos: data.productos,usuario:data.usuario});
     },
     login:function name (req,res){
         res.render('login');
@@ -11,5 +13,6 @@ const controller ={
     },
 
 }
+
 
 module.exports = controller;
