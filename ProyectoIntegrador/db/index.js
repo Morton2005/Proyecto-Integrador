@@ -33,12 +33,12 @@ const data = {
                 },
                 {
                     nombreDeUsuario:'AlfonsoAngeliono05',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'prefiero otras cosas!',
                 },
                 {
                     nombreDeUsuario:'totin44',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'maso menos!',
                 },
                 
@@ -131,17 +131,17 @@ const data = {
                 },
                 {
                     nombreDeUsuario:'juani34',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'no vale la pena!',
                 },
                 {
                     nombreDeUsuario:'memu12',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'sobrevalorado!',
                 },
                 {
                     nombreDeUsuario:'santi10',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy buenooo!',
                 },
             ],
@@ -154,27 +154,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'LaPulga10',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'eh me guta mucho!',
                 },
                 {
                     nombreDeUsuario:'luis245',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Malisimo!',
                 },
                 {
                     nombreDeUsuario:'Mila',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muuuy buenoo<3!',
                 },
                 {
                     nombreDeUsuario:'camilita12',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'meh!',
                 },
                 {
                     nombreDeUsuario:'metso34',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Malisimoooo',
                 },
                 
@@ -188,27 +188,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'mMrton33',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me gusto mucho!',
                 },
                 {
                     nombreDeUsuario:'DJ05',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me lo voy a llevar a una fiesta!',
                 },
                 {
                     nombreDeUsuario:'Milo',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Me quedaria muy bien',
                 },
                 {
                     nombreDeUsuario:'cakso',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me parece muy sobrevaolorado',
                 },
                 {
                     nombreDeUsuario:'pitu12',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'puaj!',
                 },
                 
@@ -223,27 +223,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'totosalvio',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'users/default-image.png',
                     texto:'muy simple y comun!',
                 },
                 {
                     nombreDeUsuario:'OgroFabiani',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'simplon!',
                 },
                 {
                     nombreDeUsuario:'FrankFabra',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'mpara ir a comer coonn amigos esta bueno!',
                 },
                 {
                     nombreDeUsuario:'Bauleti',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'tremendooo!',
                 },
                 {
                     nombreDeUsuario:'PolloVigniolo',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'diferente al resto, me gusta',
                 },
                 
@@ -257,27 +257,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'Dj05',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'electrico, no me gusta! soy mas de lo antiguo',
                 },
                 {
                     nombreDeUsuario:'Martin',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'dura mucho la bateria?',
                 },
                 {
                     nombreDeUsuario:'Garrix',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'tiene pinta que se rompe facil',
                 },
                 {
                     nombreDeUsuario:'Chapa',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me gusta todo la electronica, banco',
                 },
                 {
                     nombreDeUsuario:'castelo',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy bueno para estar subiendo a la cabina con ese en la muñeca',
                 },
                 
@@ -292,27 +292,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'juana  Gonzales',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy dorado no me gusta!',
                 },
                 {
                     nombreDeUsuario:'fernandasoMalaso',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me llama la atencion la mezccla de colores',
                 },
                 {
                     nombreDeUsuario:'trinidad',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'llama mucho la atencion, puede ser peligroso',
                 },
                 {
                     nombreDeUsuario:'juana454',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me gusta como le queda el verde!',
                 },
                 {
                     nombreDeUsuario: 'Gonzales',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy de banana ese',
                 },
                 
@@ -326,27 +326,27 @@ const data = {
             comentarios:[
                 {
                     nombreDeUsuario:'fran lopez',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me  gusta, muy simple y lujoso parece!',
                 },
                 {
                     nombreDeUsuario:'petson',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me  gusta, muy extrabagante',
                 },
                 {
                     nombreDeUsuario:'sapo45',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'no me gusta',
                 },
                 {
                     nombreDeUsuario:'cllapton12',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me encanto',
                 },
                 {
                     nombreDeUsuario:'fran lopez',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muuuy feo, no enteindo la gente que lo compra',
                 },
                 
