@@ -115,7 +115,7 @@ const data = {
         },
         {
             imagen:'reloj4.webp',
-            nombre:'Biden',
+            nombre:'djroloj',
             descripcion:'Reloj de calidad, color gris y azul',
             id:4,
             comentarios:[
@@ -182,7 +182,7 @@ const data = {
         },
         {
             imagen:'reloj6.jpeg',
-            nombre:'Biden',
+            nombre:'morton',
             descripcion:'Reloj de calidad, color verde y plateado',
             id:6,
             comentarios:[
