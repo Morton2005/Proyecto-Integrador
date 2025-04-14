@@ -83,4 +83,4 @@ INSERT INTO comentarios (id_productos, id_usuarios, texto) VALUES
 (5, 4, 'Comentario 2 sobre el Producto 5'),
 (5, 2, 'Comentario 3 sobre el Producto 5');
 
-
+.
