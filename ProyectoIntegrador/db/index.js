@@ -5,30 +5,30 @@ const data = {
         contrasenia:'morton05',
         fechaDeNacimiento: '23/10/2005',
         dni:48011547,
-        fotoDePerfil:'../public/images/users/default-image.png',
+        fotoDePerfil:'/default-image.png',
         
     },
 
     productos:[
         {
-            imagen:'/images/products/reloj1.webp',
+            imagen:'reloj1.webp',
             nombre:'Audemars-piguet',
             descripcion:'Reloj de calidad, color gris, buen estado',
             id:1,
             comentarios:[
                 {
                     nombreDeUsuario:'JRB',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Meh!',
                 },
                 {
                     nombreDeUsuario:'UnBeso05',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Maso maso!',
                 },
                 {
                     nombreDeUsuario:'retro',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'.default-image.png',
                     texto:'Muy bueno!',
                 },
                 {
@@ -45,34 +45,34 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo2.jpeg',
+            imagen:'reloj2.jpeg',
             nombre:'Biden',
             descripcion:'Reloj de calidad, color azul y dorado, nuevo sin uso',
             id:2,
             comentarios:[
                 {
                     nombreDeUsuario:'juanAlberto14',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Impecable!',
                 },
                 {
                     nombreDeUsuario:'tomi06',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'moooy bueno!',
                 },
                 {
                     nombreDeUsuario:'ruben38',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me encanto!',
                 },
                 {
                     nombreDeUsuario:'Fefo',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy raro!',
                 },
                 {
                     nombreDeUsuario:'esteban',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'no me llama la atencion!',
                 },
 
@@ -80,53 +80,53 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo3.webp',
+            imagen:'reloj3.webp',
             nombre:'Tissot',
             descripcion:'Reloj de calidad, color azul y gris',
             id:3,
             comentarios:[
                 {
                     nombreDeUsuario:'camilalopez',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'maso menos!',
                 },
                 {
                     nombreDeUsuario:'Sofi10',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'lo compraria!',
                 },
                 {
                     nombreDeUsuario:'Catu68',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'no me gusta mucho para ser sincera!',
                 },
                 {
                     nombreDeUsuario:'toribio',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'me gusta!',
                 },
                 {
                     nombreDeUsuario:'agustina13',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'muy raro!',
                 },
                 
             ],
         },
         {
-            imagen:'/images/products/relo4.webp',
+            imagen:'reloj4.webp',
             nombre:'Biden',
             descripcion:'Reloj de calidad, color gris y azul',
             id:4,
             comentarios:[
                 {
                     nombreDeUsuario:'cataa23',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'Buenisimo!',
                 },
                 {
                     nombreDeUsuario:'asdc45',
-                    fotoDePerfil:'../public/images/users/default-image.png',
+                    fotoDePerfil:'default-image.png',
                     texto:'feaso!',
                 },
                 {
@@ -147,7 +147,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo5.jpeg',
+            imagen:'reloj5.jpeg',
             nombre:'Swatch',
             descripcion:'Reloj de calidad, color negro y rojo',
             id:5,
@@ -181,7 +181,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/reloj6.jpeg',
+            imagen:'reloj6.jpeg',
             nombre:'Biden',
             descripcion:'Reloj de calidad, color verde y plateado',
             id:6,
@@ -216,7 +216,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo7.jpeg',
+            imagen:'reloj7.jpeg',
             nombre:'Luxury',
             descripcion:'Reloj de calidad, color negro y plateado',
             id:7,
@@ -250,7 +250,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo8.jpeg',
+            imagen:'reloj8.webp',
             nombre:'electronic',
             descripcion:'Reloj de calidad, electrico',
             id:8,
@@ -285,7 +285,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo9.jpeg',
+            imagen:'reloj9.jpeg',
             nombre:'golden',
             descripcion:'Reloj de calidad, color oro y verde',
             id:9,
@@ -319,7 +319,7 @@ const data = {
             ],
         },
         {
-            imagen:'/images/products/relo10.jpeg',
+            imagen:'reloj10.jpeg',
             nombre:'tomas',
             descripcion:'Reloj de calidad, color marino y plateado',
             id:10,
