@@ -7,7 +7,8 @@ const controller ={
         let producto = data.productos;
 
 
-        res.render('product', {producto: producto});
+        res.render('product', {productos: producto});
+
     },
 
     add:function (req,res){
