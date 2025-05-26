@@ -1,14 +1,15 @@
 use milo;
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+username Varchar(100) NOT NULL UNIQUE,
 email Varchar(100) NOT NULL UNIQUE,
 contrasenia VARCHAR (255) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
 dni INT NOT NULL UNIQUE,
 foto_perfil VARCHAR(255),
-createAt timestamp DEFAULT current_timestamp,
-updateAt timestamp Default current_timestamp on update current_timestamp,
-deleteAt timestamp NULL ON UPDATE current_timestamp
+createdAt timestamp DEFAULT current_timestamp,
+updatedAt timestamp Default current_timestamp on update current_timestamp,
+deletedAt timestamp NULL ON UPDATE current_timestamp
 
 );
 
@@ -18,9 +19,9 @@ foto_Producto varchar(255),
 nombre_producto text not null ,
 descripcion_Producto text not null , 
 id_usuario INT UNSIGNED not null,
-createAt timestamp DEFAULT current_timestamp,
-updateAt timestamp Default current_timestamp on update current_timestamp,
-deleteAt timestamp NULL ON UPDATE current_timestamp,
+createdAt timestamp DEFAULT current_timestamp,
+updatedAt timestamp Default current_timestamp on update current_timestamp,
+deletedAt timestamp NULL ON UPDATE current_timestamp,
 foreign key (id_usuario) REFERENCES usuarios (id)
 );
 CREATE table comentarios(
@@ -28,9 +29,11 @@ id INT UNSIGNED PRIMARY KEY auto_increment,
 texto VARCHAR (100)not NULL,
 id_productos INT UNSIGNED  Not NULL, 
 id_usuarios INT UNSIGNED NOT NULL,
-createAt timestamp DEFAULT current_timestamp,
-updateAt timestamp Default current_timestamp on update current_timestamp,
-deleteAt timestamp NULL ON UPDATE current_timestamp
+createdAt timestamp DEFAULT current_timestamp,
+updatedAt timestamp Default current_timestamp on update current_timestamp,
+deletedAt timestamp NULL ON UPDATE current_timestamp,
+FOREIGN KEY (id_productos) REFERENCES productos(id),
+FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
 ) ;
 
 INSERT INTO usuarios (email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES
