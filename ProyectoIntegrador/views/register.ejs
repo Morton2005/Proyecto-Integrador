@@ -34,15 +34,16 @@
 			<!-- Show the "ultimos" products -->
 			
 			<div class="col-12"> 
-				<form action="/users/login" method="GET" class="registerForm"> 
+				<form action="/users/register" method="POST" class="registerForm"> 
+					<div> 
+						<label for="username"> Username: </label>
+						<input type="text" name="username" id="username" required>  
+					</div>
 					<div> 
 						<label for="email"> Email: </label>
 						<input type="email" name="email" id="email" required>  
 					</div>
-					<div> 
-						<label for="username"> Usuario: </label>
-						<input type="text" name="username" id="username" required>  
-					</div>
+					
 					<div> 
 						<label for="password"> Password: </label>
 						<input type="password" name="password" id="password" required>  

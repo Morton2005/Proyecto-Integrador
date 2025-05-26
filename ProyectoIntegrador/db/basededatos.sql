@@ -36,7 +36,7 @@ FOREIGN KEY (id_productos) REFERENCES productos(id),
 FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
 ) ;
 
-INSERT INTO usuarios (email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES
+INSERT INTO usuarios (username,email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES
 ('usuario1@example.com', 'contraseña1', '1990-01-01', 12345678, 'foto1.jpg'),
 ('usuario2@example.com', 'contraseña2', '1985-03-15', 23456789, 'foto2.jpg'),
 ('usuario3@example.com', 'contraseña3', '1992-07-30', 34567890, 'foto3.jpg'),
