@@ -1,25 +1,49 @@
-let data = require('../db/index')
+const db = require('../database/models')
 
 
 const controller ={
-    index:function  (req,res){
-        let idbuscado = req.params.id;
-    let productos = data.productos;
+    home: function(req,res){
+        db.Product.findAll({
+            include: [{association: "user"}]
+        })
 
-    let producto = productos[idbuscado - 1];
+        .then(function(products){
+            res.render("index", { productos: products });
+        })
 
-        res.render('product', {
-            productoDetalle: producto,
-            productos: productos
-          });
+        .catch(function(error){
+            res.send(error);
+        });
     },
 
-    add:function (req,res){
-        res.render('product-add');
+    index: function (req, res) {
+        let idBuscado = req.params.id;
+
+        db.Product.findByPk(idBuscado, {
+            include: [{ association: "user" }]
+        })
+        .then(function (producto) {
+            if (!producto) return res.send("Producto no encontrado");
+
+            res.render("product", {
+                productoDetalle: producto
+            });
+        })
+        .catch(function (error) {
+            res.send(error);
+        });
+    
     },
-    test:function (req,res){
-        return res.send("hola")
-    }
+
+    add: function(req,res){
+        res.render("product-add");
+    },
+
+
+
+
+
+    
 
 }
 
