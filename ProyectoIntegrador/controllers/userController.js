@@ -30,15 +30,19 @@ const controller ={
     register:function name (req,res){
         res.render('register');
     },
-    ProcesoDeLoggin:function(req, res) {
-
-        data.User.FindOne({
-            where: { email: 'req.body.email' }
+    ProcesoDeLoggin: function(req, res) {
+        data.User.findOne({
+            where: { email: req.body.email }
         })
-
-        then.(function(userFound) {}
+        .then(function(userFound) {
+           
+            res.send(userFound);
+        })
+        .catch(function(error) {
+            res.send(error);
+        });
     },
-
+    
 }
 
 
