@@ -36,8 +36,31 @@ const controller ={
     },
 
     add: function(req,res){
+        if(!req.session.user){
+            return res.redirect('/users/login');
+        }
+
+
         res.render("product-add");
     },
+
+    create: function(req,res){
+        db.Product.create({
+            name: req.body.name,
+            description: req.body.description,
+            image: req.body.image,
+            userId: req.session.user.id,
+            createdAt: new Date()
+        })
+
+        .then(function(){
+            return res.redirect('/')
+        })
+
+        .catch(function(error){
+            return res.send("Error al crear el producto")
+        })
+    }
 
 
 

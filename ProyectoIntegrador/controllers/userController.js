@@ -1,6 +1,5 @@
-let data = require('../db/index') //este esta mal creo xq hay que usar la nueva base de datos esa se queda vieja. "let data = require('../db/index')"
-//[const op = db.Sequelize.Op;] eso Cuando queremos filtrar por criterios que no sean igualdad necesitamos utilizar los operadores de sequelize
-//creo que no anda xq falta linkear la base de datos bien
+let data = require('../database/models') 
+let bcrypt = require('bcryptjs');
 
 const controller ={
 
@@ -10,7 +9,7 @@ const controller ={
     create: function(req, res){
         db.User.create({
              email: req.body.email,
-             password: bcrypt.hashSync(req.body.password, 10) // usamos 10 de nivel de encriptado en las slides recomienda entra 10 y 12
+             password: bcrypt.hashSync(req.body.password, 10) 
         })   
         .then(function(User){
              return res.redirect('/');
