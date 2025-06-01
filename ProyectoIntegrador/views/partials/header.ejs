@@ -35,15 +35,29 @@
             </ul>
 
             <ul class="right-navbar">
-               
-           
+                <% if (session.user) { %>
                     <li>
-                        <a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                        <a href="/users/profile">
+                            Hola <%= session.user.username %> <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                        <a href="/products/add">Cargar producto</a>
                     </li>
+                    <li>
+                        <form action="/users/logout" method="POST">
+                            <button class="logout" type="submit">
+                                Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </form>
+                    </li>
+                <% } else { %>
+                    <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+                    <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                <% } %>
+               
+           
+            
             </ul>
         </nav>
     </div>
