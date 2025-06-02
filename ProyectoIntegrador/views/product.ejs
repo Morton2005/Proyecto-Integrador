@@ -30,12 +30,12 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<h2><%= productoDetalle.nombre %></h2>
+					<h2><%= productoDetalle.name %></h2>
 
-					<img src="/images/products/<%= productoDetalle.imagen %>" alt="Imagen del producto">
+					<img src="/images/products/<%= productoDetalle.image %>" alt="Imagen del producto">
 
 
-<p><%= productoDetalle.descripcion %></p>
+<p><%= productoDetalle.description%></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -44,12 +44,12 @@
 							  <section class="product-section">
 								<a href="/products/detalle/<%= productos[i].id %>">
 								  <figure class="product-section-image">
-									<img src="/images/products/<%= productos[i].imagen %>" alt="<%= productos[i].nombre %>">
+									<img src="/images/products/<%= productos[i].image %>" alt="<%= productos[i].name %>">
 								  </figure>
 								  <article>
 									<div class="data">
-									  <h2 class="prodnombre"><a href="/profile"><%= productos[i].nombre %></a></h2>
-									  <p class="descripcionp"><%= productos[i].descripcion %></p>
+									  <h2 class="prodnombre"><a href="/profile"><%= productos[i].name %></a></h2>
+									  <p class="descripcionp"><%= productos[i].description %></p>
 									  <p class="comentariop"> <%= productos[i].comentarios.length %></p>
 									</div>
 								  </article>

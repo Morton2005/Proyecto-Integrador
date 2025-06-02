@@ -87,6 +87,11 @@ const controller ={
             return res.send("Error al procesar el login");
         });
     },
+
+    logout: function(req,res){
+        req.session.destroy();
+        res.redirect('/');
+    }
     
 }
 
