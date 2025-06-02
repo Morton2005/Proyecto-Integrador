@@ -1,12 +1,12 @@
 const { where } = require('sequelize');
 let data = require('../database/models')
-let Op = db.sequelize.Op;
+let Op = data.sequelize.Op;
 const controller ={
     index:function  (req,res){
         data.Product.findAll()
         .then(function(productos){
         
-        return res.render('index', {productos:productos});
+        return res.render('index', {Product:productos});
         })
       .catch(function(error){
         return res.send("Error");
@@ -14,20 +14,28 @@ const controller ={
     },
 
     searchResults: function(req, res) {
-    let search = req.query.search;
-    data.Producto.findAll({
+
+    data.Product.findAll({
+      
     where: [
 	{ title: { [Op.like]: `%${req.body.search}%` } }
     ]
-  })
-   .then(function(productos) {
-      res.render("search-results"), {
-        title: "search",  
-        data: products,
-        search: search
-        
+    include: [ 
+      {association:""} 
+      {association:""}//los comentarios y el usuario hay q agreagarrle en estos dos 
+    ]
 
-}
-.catch ()
-}
+  })
+  
+   .then(function(productos) {
+      return res.render("search-results"),{
+        Product: productos,
+        search: search}
+   })
+  
+    .catch(function(error){
+        return res.send("Error");
+      })
+    }
+  }
 module.exports = controller;
