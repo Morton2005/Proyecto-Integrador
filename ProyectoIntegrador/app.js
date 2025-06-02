@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Clave secreta para sesiones (idealmente usar variable de entorno)
 app.use(session({
     secret: process.env.SESSION_SECRET || 'tu_clave_secreta_aqui',

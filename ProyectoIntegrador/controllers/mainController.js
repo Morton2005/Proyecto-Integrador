@@ -1,4 +1,6 @@
+const { where } = require('sequelize');
 let data = require('../database/models')
+let Op = db.sequelize.Op;
 const controller ={
     index:function  (req,res){
         data.Product.findAll()
@@ -11,13 +13,19 @@ const controller ={
       })
     },
 
-    searchResults:function  (req,res){
-        res.render('search-results', {productos: data.Product});
-    },
+    searchResults: function(req, res) {
+    let search = req.query.search;
+    data.Producto.findAll({
+    where: [
+	{ title: { [Op.like]: `%${req.body.search}%` } }
+    ]
+  })
+   .then(function(productos) {
+      res.render("search-results"), {
+        title: "search",  
+        data: products,
+        search: search
 
-
-    
-    
 }
-
+}
 module.exports = controller;
