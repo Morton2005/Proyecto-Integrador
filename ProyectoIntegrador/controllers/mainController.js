@@ -25,7 +25,9 @@ const controller ={
         title: "search",  
         data: products,
         search: search
+        
 
 }
+.catch ()
 }
 module.exports = controller;

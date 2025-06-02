@@ -61,10 +61,31 @@ const controller ={
             return res.send("Error al crear el producto")
         })
     
-    
+    },
+
+    perfil: function (req, res) {
+        const usuario = req.session.user;
+
+        if (!usuario) {
+            return res.redirect('/users/login');
+        }
+
+        db.Product.findAll({
+            where: { id_usuario: usuario.id }
+        })
+        .then(function (productos) {
+            res.render("profile", {
+                usuario: usuario,
+                productos: productos,
+                total: productos.length
+            });
+        })
+        .catch(function (error) {
+            console.log("Error en perfil:", error);
+            res.send("Hubo un error al cargar tu perfil.");
+        });
+
     }
-
-
 
 
 
