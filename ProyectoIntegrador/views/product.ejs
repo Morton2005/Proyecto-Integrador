@@ -1,84 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
-
-	<title> Mercado Liebre Argentina</title>
-	<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/css/app.css">
+    <title>Detalle del Producto</title>
 </head>
 <body>
-	<!-- Header -->
-	<%- include("./partials/header") %>
-	<!-- /Header -->
-	
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
-			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>
-			</p>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<h2><%= productoDetalle.name %></h2>
-
-					<img src="/images/products/<%= productoDetalle.image %>" alt="Imagen del producto">
-
-
-<p><%= productoDetalle.description%></p>
-				</article>
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-						<% for(let i = 0; i < productos.length; i++) { %>
-							<div class="col-12 col-sm-6 col-lg-3">
-							  <section class="product-section">
-								<a href="/products/detalle/<%= productos[i].id %>">
-								  <figure class="product-section-image">
-									<img src="/images/products/<%= productos[i].image %>" alt="<%= productos[i].name %>">
-								  </figure>
-								  <article>
-									<div class="data">
-									  <h2 class="prodnombre"><a href="/profile"><%= productos[i].name %></a></h2>
-									  <p class="descripcionp"><%= productos[i].description %></p>
-									  <p class="comentariop"> <%= productos[i].comentarios.length %></p>
-									</div>
-								  </article>
-								</a>
-							  </section>
-							</div>
-						  <% } %>
-						  
-						
-						
-						
-						
-						
-
-					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
-
-	<!-- footer -->
-	<%- include("./partials/footer")%>
-	<!-- /footer -->
-
-</body>	
+    <% if (producto) { %>
+        <h1><%= producto.nombre %></h1>
+        <p>Precio: $<%= producto.precio %></p>
+        <p>Descripción: <%= producto.descripcion %></p>
+    <% } else { %>
+        <h1>Producto no encontrado</h1>
+    <% } %>
+</body>
 </html>

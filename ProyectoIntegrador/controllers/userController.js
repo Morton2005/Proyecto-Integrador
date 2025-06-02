@@ -20,7 +20,7 @@ const controller ={
             return res.send("La contraseña debe tener al menos 3 caracteres");
         }
 
-        db.User.findOne({
+        data.User.findOne({
             where: {
                 email: req.body.email
             }
@@ -29,7 +29,7 @@ const controller ={
             if(userFound){
                 return res.send("El email ya existe")
             }
-            return db.User.create({
+            return data.User.create({
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),

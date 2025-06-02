@@ -1,11 +1,13 @@
-let data = require('../db/index')
+let data = require('../database/models')
 const controller ={
     index:function  (req,res){
-        res.render('index', {productos: data.productos});
+        data.Product.findAll{}
+        .then()
+        res.render('index', {productos: data.Product});
     },
 
     searchResults:function  (req,res){
-        res.render('search-results', {productos: data.productos});
+        res.render('search-results', {productos: data.Product});
     },
 
 

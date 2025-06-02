@@ -1,40 +1,44 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = function(sequelize, DataTypes) {
     let alias = "User";
 
     let cols = {
-        id:{
-            type: dataTypes.INTEGER,
+        id: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            field: 'id'  // igual, pero explícito
         },
-
-        username:{
-            type: dataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
+            field: 'email'
         },
-        email:{
-            type: dataTypes.STRING,
+        password: {
+            type: DataTypes.STRING,
+            field: 'contrasenia'  // se llama "contrasenia" en BD
         },
-        password:{
-            type: dataTypes.STRING,
+        birthdate: {
+            type: DataTypes.DATE,
+            field: 'fecha_nacimiento' // nombre real en BD
         },
-        birthdate:{
-            type: dataTypes.DATE,
+        dni: {
+            type: DataTypes.INTEGER,
+            field: 'dni'
         },
-        dni:{
-            type: dataTypes.INTEGER,
+        profileImage: {
+            type: DataTypes.STRING,
+            field: 'foto_perfil'  // nombre real en BD
         },
-        profileImage:{
-            type: dataTypes.STRING,
-        },
-        
         createdAt: {
-            type: dataTypes.DATE
+            type: DataTypes.DATE,
+            field: 'createAt'
         },
         updatedAt: {
-            type: dataTypes.DATE
+            type: DataTypes.DATE,
+            field: 'updateAt'
         },
         deletedAt: {
-            type: dataTypes.DATE
+            type: DataTypes.DATE,
+            field: 'deleteAt'
         }
     };
 
@@ -45,16 +49,16 @@ module.exports = function(sequelize,dataTypes){
 
     let User = sequelize.define(alias, cols, config);
 
-    User.associate = function(models){
-        User.hasMany(models.Product,{
+    User.associate = function(models) {
+        User.hasMany(models.Product, {
             as: "products",
-            foreignKey: "userId"
+            foreignKey: "id_usuario"  // nombre real en productos
         });
-        User.hasMany(models.Comment,{
+        User.hasMany(models.Comment, {
             as: "comments",
-            foreignKey: "userId"
+            foreignKey: "userId"  // aquí revisa si en comentarios la FK es userId o algún otro nombre
         });
     };
-    return User;
 
-}
+    return User;
+};

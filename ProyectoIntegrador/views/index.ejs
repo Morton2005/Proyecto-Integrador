@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
-	
-	<title> Mercado Liebre Argentina</title>
-			<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
+	<title>Mercado Liebre Argentina</title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="/css/app.css" />
 </head>
 <body>
 	<!-- Header -->
@@ -20,42 +18,37 @@
 	<!-- /Header -->
 	
 	<!-- Banner -->
-	<div class="banner">
-		
-	</div>
+	<div class="banner"></div>
 	<!-- /Banner -->
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<!-- use un bucle con for xq sino hacer articuo por articulo tardabamos mucho -->
 			<% productos.forEach(function(product) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
-				  <section class="product-box">
-					<a href="/products/detalle/<%= product.id %>">
-					  <figure class="product-box_image">
-						<img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
-					  </figure>
-					  <article class="product-box_data">
-						<h2><%= product.name %></h2>
-						<p><%= product.description %></p>
-						<p>Subido por: 
-						  <a href="/users/profile/<%= product.user.id %>">
-							<%= product.user.username || product.user.email %>
-						  </a>
-						</p>
-					  </article>
-					</a>
-				  </section>
+					<section class="product-box">
+						<a href="/products/detalle/<%= product.id %>">
+							<figure class="product-box_image">
+								<img src="/imgs/<%= product.image %>" alt="<%= product.name %>" />
+							</figure>
+							<article class="product-box_data">
+								<h2><%= productos.name %></h2>
+								<p><%= productos.description %></p>
+								<p>Subido por: 
+									<a href="/users/profile/<%= product.user.id %>">
+										<%= product.user.email %>
+									</a>
+								</p>
+							</article>
+						</a>
+					</section>
 				</div>
-			  <% }) %>
-			  
+			<% }) %>
 		</div>
 	</div>
 
-
-	<!-- footer -->
-	<%- include("./partials/footer")%>
-	<!-- /footer -->
-</body>	
+	<!-- Footer -->
+	<%- include("./partials/footer") %>
+	<!-- /Footer -->
+</body>
 </html>
