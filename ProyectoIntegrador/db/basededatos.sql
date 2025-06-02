@@ -1,3 +1,4 @@
+create schema milo;
 use milo;
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -37,11 +38,11 @@ FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
 ) ;
 
 INSERT INTO usuarios (username,email, contrasenia, fecha_nacimiento, dni, foto_perfil) VALUES
-('usuario1@example.com', 'contraseña1', '1990-01-01', 12345678, 'foto1.jpg'),
-('usuario2@example.com', 'contraseña2', '1985-03-15', 23456789, 'foto2.jpg'),
-('usuario3@example.com', 'contraseña3', '1992-07-30', 34567890, 'foto3.jpg'),
-('usuario4@example.com', 'contraseña4', '1995-11-25', 45678901, 'foto4.jpg'),
-('usuario5@example.com', 'contraseña5', '1988-05-10', 56789012, 'foto5.jpg');
+('username1','usuario1@example.com', 'contraseña1', '1990-01-01', 12345678, 'foto1.jpg'),
+('usernam2e','usuario2@example.com', 'contraseña2', '1985-03-15', 23456789, 'foto2.jpg'),
+('usernam3e','usuario3@example.com', 'contraseña3', '1992-07-30', 34567890, 'foto3.jpg'),
+('usernam4e','usuario4@example.com', 'contraseña4', '1995-11-25', 45678901, 'foto4.jpg'),
+('usernam5e','usuario5@example.com', 'contraseña5', '1988-05-10', 56789012, 'foto5.jpg');
 
 
 INSERT INTO productos (id_usuario, foto_Producto, nombre_producto, descripcion_producto) VALUES
@@ -85,6 +86,3 @@ INSERT INTO comentarios (id_productos, id_usuarios, texto) VALUES
 (5, 1, 'Comentario 1 sobre el Producto 5'),
 (5, 4, 'Comentario 2 sobre el Producto 5'),
 (5, 2, 'Comentario 3 sobre el Producto 5');
-
-.
-...

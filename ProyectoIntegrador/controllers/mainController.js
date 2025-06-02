@@ -1,9 +1,11 @@
 let data = require('../database/models')
 const controller ={
     index:function  (req,res){
-        data.Product.findAll{}
-        .then()
+        data.Product.findAll()
+        .then((function(productos){
         res.render('index', {productos: data.Product});
+        })
+      
     },
 
     searchResults:function  (req,res){
