@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            field: 'id'  // igual, pero explícito
+            field: 'id' 
         },
         email: {
             type: DataTypes.STRING,
@@ -14,11 +14,11 @@ module.exports = function(sequelize, DataTypes) {
         },
         password: {
             type: DataTypes.STRING,
-            field: 'contrasenia'  // se llama "contrasenia" en BD
+            field: 'contrasenia'  
         },
         birthdate: {
             type: DataTypes.DATE,
-            field: 'fecha_nacimiento' // nombre real en BD
+            field: 'fecha_nacimiento' 
         },
         dni: {
             type: DataTypes.INTEGER,
@@ -26,19 +26,19 @@ module.exports = function(sequelize, DataTypes) {
         },
         profileImage: {
             type: DataTypes.STRING,
-            field: 'foto_perfil'  // nombre real en BD
+            field: 'foto_perfil' 
         },
         createdAt: {
             type: DataTypes.DATE,
-            field: 'createAt'
+            field: 'createdAt'
         },
         updatedAt: {
             type: DataTypes.DATE,
-            field: 'updateAt'
+            field: 'updatedAt'
         },
         deletedAt: {
             type: DataTypes.DATE,
-            field: 'deleteAt'
+            field: 'deletedAt'
         }
     };
 
@@ -52,11 +52,11 @@ module.exports = function(sequelize, DataTypes) {
     User.associate = function(models) {
         User.hasMany(models.Product, {
             as: "products",
-            foreignKey: "id_usuario"  // nombre real en productos
+            foreignKey: "id_usuario"  
         });
         User.hasMany(models.Comment, {
             as: "comments",
-            foreignKey: "userId"  // aquí revisa si en comentarios la FK es userId o algún otro nombre
+            foreignKey: "userId"  
         });
     };
 

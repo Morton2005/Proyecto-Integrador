@@ -60,6 +60,8 @@ const controller ={
         .catch(function(error){
             return res.send("Error al crear el producto")
         })
+    
+    
     }
 
 

@@ -28,27 +28,24 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false,
             field: 'id_usuario'
         },
-        createAt: {
+        createdAt: {
             type: dataTypes.DATE,
-            field: 'createAt'
+            field: 'createdAt'
         },
-        updateAt: {
+        updatedAt: {
             type: dataTypes.DATE,
-            field: 'updateAt'
+            field: 'updatedAt'
         },
-        deleteAt: {
+        deletedAt: {
             type: dataTypes.DATE,
             allowNull: true,
-            field: 'deleteAt'
+            field: 'deletedAt'
         }
     };
 
     let config = {
         tableName: "productos",
         timestamps: true,           
-        createdAt: 'createAt',    
-        updatedAt: 'updateAt',    
-        deletedAt: 'deleteAt',   
         paranoid: true           
     };
     
