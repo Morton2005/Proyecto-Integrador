@@ -22,19 +22,20 @@
 	<!-- /Banner -->
 
 	<!-- Novedades -->
-	<div class="container products-wrapper">
+	<div class="container products-wrapper my-5">
 		<div class="row">
 			<% productos.forEach(function(product) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/products/detalle/<%= product.id %>">
-							<figure class="product-box_image">
-								<img src="/imgs/<%= product.image %>" alt="<%= product.name %>" />
+				<div class="col-12 col-sm-6 col-lg-3 mb-4">
+					<section class="product-box text-center p-3 border rounded">
+						<a href="/products/detalle/<%= product.id %>" style="text-decoration: none; color: inherit;">
+							<figure class="product-box_image mb-2">
+								<img src="/images/products/<%= product.foto_Producto %>" alt="<%= product.nombre_producto %>" style="max-width: 100%; height: 150px; object-fit: cover;">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= productos.name %></h2>
-								<p><%= productos.description %></p>
-								<p>Subido por: 
+								<h5 class="mb-1"><%= product.nombre_producto %></h5>
+								<p class="small text-muted"><%= product.descripcion_Producto %></p>
+								<p class="small text-secondary">
+									Subido por: 
 									<a href="/users/profile/<%= product.user.id %>">
 										<%= product.user.email %>
 									</a>

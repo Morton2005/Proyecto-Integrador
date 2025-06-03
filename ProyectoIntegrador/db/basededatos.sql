@@ -78,3 +78,13 @@ INSERT INTO comentarios (id_productos, id_usuarios, texto) VALUES
 (5, 1, 'Comentario 1 sobre el Producto 5'),
 (5, 4, 'Comentario 2 sobre el Producto 5'),
 (5, 2, 'Comentario 3 sobre el Producto 5');
+UPDATE productos SET deletedAt = NULL WHERE id = 2;
+UPDATE productos SET deletedAt = NULL WHERE id = 3;
+UPDATE productos SET deletedAt = NULL WHERE id = 4;
+UPDATE productos SET deletedAt = NULL WHERE id = 5;
+UPDATE productos SET deletedAt = NULL WHERE id = 6;
+UPDATE productos SET deletedAt = NULL WHERE id = 7;
+UPDATE productos SET deletedAt = NULL WHERE id = 8;
+UPDATE productos SET deletedAt = NULL WHERE id = 9;
+UPDATE productos SET deletedAt = NULL WHERE id = 10;
+

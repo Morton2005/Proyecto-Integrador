@@ -1,30 +1,35 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = function(sequelize, dataTypes) {
     let alias = "Comment";
 
     let cols = {
-        id:{
+        id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-
-        content:{
+        content: {
             type: dataTypes.STRING,
+            field: 'texto'  // ⬅️ nombre real en la BD
         },
-        productId:{
+        productId: {
             type: dataTypes.INTEGER,
+            field: 'id_productos'  // ⬅️ nombre real en la BD
         },
-        userId:{
+        userId: {
             type: dataTypes.INTEGER,
+            field: 'id_usuarios'  // ⬅️ nombre real en la BD
         },
         createdAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            field: 'createdAt'
         },
         updatedAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            field: 'updatedAt'
         },
         deletedAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            field: 'deletedAt'
         }
     };
 
@@ -35,16 +40,16 @@ module.exports = function(sequelize,dataTypes){
 
     let Comment = sequelize.define(alias, cols, config);
 
-    Comment.associate = function(models){
-        Comment.belongsTo(models.Product,{
+    Comment.associate = function(models) {
+        Comment.belongsTo(models.Product, {
             as: "product",
-            foreignKey: "productId"
+            foreignKey: "id_productos"
         });
-        Comment.belongsTo(models.User,{
+        Comment.belongsTo(models.User, {
             as: "user",
-            foreignKey: "userId"
+            foreignKey: "id_usuarios"
         });
     };
-    return Comment;
 
-}
+    return Comment;
+};

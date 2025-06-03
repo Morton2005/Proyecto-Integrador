@@ -49,7 +49,6 @@ module.exports = function(sequelize, dataTypes) {
         paranoid: true           
     };
     
-
     let Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
@@ -59,7 +58,7 @@ module.exports = function(sequelize, dataTypes) {
         });
         Product.hasMany(models.Comment, {
             as: "comments",
-            foreignKey: "id_productos"
+            foreignKey: "id_productos" 
         });
     };
 

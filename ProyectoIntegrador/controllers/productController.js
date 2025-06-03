@@ -1,38 +1,45 @@
 const db = require('../database/models');
 
 const controller = {
-    home: function(req,res){
+    home: function(req, res) {
         db.Product.findAll({
             include: [{ model: db.User, as: 'user' }]
         })
-        .then(function(products){
+        .then(function(products) {
             res.render("index", { productos: products });
         })
-        .catch(function(error){
+        .catch(function(error) {
             res.send(error);
         });
     },
 
-    detalle: function (req, res) {
+    detalle: function(req, res) {
         let idBuscado = req.params.id;
-
+    
         db.Product.findByPk(idBuscado, {
-            include: [{ model: db.User, as: "user" }]
+            include: [
+                { model: db.User, as: "user" },
+                {
+                    model: db.Comment,
+                    as: "comments",
+                    include: [{ model: db.User, as: "user" }]
+                }
+            ]
         })
-        .then(function (producto) {
+        .then(function(producto) {
             if (!producto) return res.send("Producto no encontrado");
-
+    
             res.render("product", {
                 productoDetalle: producto
             });
         })
-        .catch(function (error) {
+        .catch(function(error) {
             res.send("Error al buscar el producto: " + error);
         });
     },
 
-    add: function(req,res){
-        if(!req.session.user){
+    add: function(req, res) {
+        if (!req.session.user) {
             return res.redirect('/users/login');
         }
 
@@ -55,7 +62,26 @@ const controller = {
         });
     },
 
-    profile: function (req, res) {
+    comentar: function(req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        db.Comment.create({
+            content: req.body.comment,
+            productId: req.params.id,
+            userId: req.session.user.id,
+            createdAt: new Date()
+        })
+        .then(() => {
+            res.redirect('/products/detalle/' + req.params.id);
+        })
+        .catch(error => {
+            res.send("Error al crear el comentario: " + error);
+        });
+    },
+
+    profile: function(req, res) {
         if (!req.session.user) {
             return res.redirect('/users/login');
         }

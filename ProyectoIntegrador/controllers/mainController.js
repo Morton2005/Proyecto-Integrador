@@ -1,5 +1,6 @@
 let data = require('../database/models')
-let Op = data.Sequelize.Op;
+let {Op} = require('Sequelize')
+
 const controller = {
   index: function (req, res) {
     data.Product.findAll()
