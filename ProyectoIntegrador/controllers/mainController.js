@@ -11,12 +11,14 @@ const controller = {
       });
   },
 
+
   searchResults: function (req, res) {
     let search = req.query.search;
 
+
     data.Product.findAll({
       where: {
-        nombre_producto: { [Op.like]: %${search}% }
+        nombre_producto: { [Op.like]: `%${search}%` }
       },
       include: [
         { association: 'usuario' },
@@ -44,4 +46,5 @@ const controller = {
       });
   }
 };
-module.exports = controller;
+module.exports = controller;
+
