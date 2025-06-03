@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <% if (producto) { %>
-        <h1><%= producto.nombre %></h1>
-        <p>Precio: $<%= producto.precio %></p>
-        <p>Descripción: <%= producto.descripcion %></p>
+    <% if (productoDetalle) { %>
+        <section class="product-detail">
+            <h1><%= productoDetalle.nombre_producto %></h1>
+
+            <% if (productoDetalle.foto_Producto) { %>
+                <img src="/images/products/<%= productoDetalle.foto_Producto %>" alt="<%= productoDetalle.nombre_producto %>" style="max-width:300px;">
+            <% } else { %>
+                <p>Sin imagen disponible.</p>
+            <% } %>
+
+            <p><strong>Descripción:</strong> <%= productoDetalle.descripcion_Producto %></p>
+
+            <% if (productoDetalle.user) { %>
+                <p>
+                    <strong>Publicado por:</strong> 
+                    <a href="/users/profile/<%= productoDetalle.user.id %>">
+                        <%= productoDetalle.user.email %>
+                    </a>
+                </p>
+            <% } else { %>
+                <p><strong>Publicado por:</strong> Usuario desconocido</p>
+            <% } %>
+        </section>
     <% } else { %>
-        <h1>Producto no encontrado</h1>
+        <h2>Producto no encontrado</h2>
     <% } %>
 </body>
 </html>

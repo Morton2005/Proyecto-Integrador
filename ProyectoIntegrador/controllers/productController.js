@@ -1,26 +1,23 @@
-const db = require('../database/models')
+const db = require('../database/models');
 
-
-const controller ={
+const controller = {
     home: function(req,res){
         db.Product.findAll({
-            include: [{association: "user"}]
+            include: [{ model: db.User, as: 'user' }]
         })
-
         .then(function(products){
             res.render("index", { productos: products });
         })
-
         .catch(function(error){
             res.send(error);
         });
     },
 
-    index: function (req, res) {
+    detalle: function (req, res) {
         let idBuscado = req.params.id;
 
         db.Product.findByPk(idBuscado, {
-            include: [{ association: "user" }]
+            include: [{ model: db.User, as: "user" }]
         })
         .then(function (producto) {
             if (!producto) return res.send("Producto no encontrado");
@@ -30,9 +27,8 @@ const controller ={
             });
         })
         .catch(function (error) {
-            res.send(error);
+            res.send("Error al buscar el producto: " + error);
         });
-    
     },
 
     add: function(req,res){
@@ -40,57 +36,46 @@ const controller ={
             return res.redirect('/users/login');
         }
 
-
         res.render("product-add");
     },
 
-    create: function(req,res){
+    create: function(req, res) {
         db.Product.create({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.image,
-            userId: req.session.user.id,
+            nombre_producto: req.body.nombre_producto,
+            descripcion_Producto: req.body.descripcion_Producto,
+            foto_Producto: req.body.foto_Producto,
+            id_usuario: req.session.user.id,
             createdAt: new Date()
         })
-
-        .then(function(){
-            return res.redirect('/')
+        .then(function() {
+            return res.redirect('/');
         })
-
-        .catch(function(error){
-            return res.send("Error al crear el producto")
-        })
-    
+        .catch(function(error) {
+            return res.send("Error al crear el producto: " + error);
+        });
     },
 
-    perfil: function (req, res) {
-        const usuario = req.session.user;
-
-        if (!usuario) {
+    profile: function (req, res) {
+        if (!req.session.user) {
             return res.redirect('/users/login');
         }
 
-        db.Product.findAll({
-            where: { id_usuario: usuario.id }
+        db.User.findByPk(req.session.user.id, {
+            include: [{ association: "productos" }]
         })
-        .then(function (productos) {
-            res.render("profile", {
-                usuario: usuario,
-                productos: productos,
-                total: productos.length
+        .then(user => {
+            if (!user) return res.redirect('/users/login');
+
+            res.render('profile', {
+                user: user,
+                productos: user.productos,
+                totalProductos: user.productos.length
             });
         })
-        .catch(function (error) {
-            console.log("Error en perfil:", error);
-            res.send("Hubo un error al cargar tu perfil.");
+        .catch(error => {
+            res.send("Error al cargar el perfil: " + error);
         });
-
     }
+};
 
-
-
-    
-
-}
-
-module.exports = controller;
+module.exports = controller;

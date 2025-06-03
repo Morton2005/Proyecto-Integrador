@@ -59,7 +59,7 @@ module.exports = function(sequelize, dataTypes) {
         });
         Product.hasMany(models.Comment, {
             as: "comments",
-            foreignKey: "productId"
+            foreignKey: "id_productos"
         });
     };
 

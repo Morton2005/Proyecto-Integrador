@@ -52,11 +52,29 @@ const controller ={
     },
     
 
-    profile:function name (req,res){
-            res.render('profile');
+    profile: function (req, res) {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+    
+        data.User.findByPk(req.session.user.id, {
+            include: [{ association: "productos" }]
+        })
+        .then(user => {
+            if (!user) return res.redirect('/users/login');
+    
+            res.render('profile', {
+                user: user,
+                productos: user.productos,
+                totalProductos: user.productos.length
+            });
+        })
+        .catch(error => res.send("Error al cargar el perfil: " + error));
     },
+    
 
-    login:function name (req,res){
+    login: function (req, res) {
+
         if(req.session.user){
             return res.redirect('/users/profile')
         }

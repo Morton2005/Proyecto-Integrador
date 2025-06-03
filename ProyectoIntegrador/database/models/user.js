@@ -1,62 +1,57 @@
 module.exports = function(sequelize, DataTypes) {
-    let alias = "User";
+    const alias = "User";
 
-    let cols = {
+    const cols = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            field: 'id' 
         },
         email: {
-            type: DataTypes.STRING,
-            field: 'email'
+            type: DataTypes.STRING
         },
         password: {
             type: DataTypes.STRING,
-            field: 'contrasenia'  
+            field: 'contrasenia'
         },
         birthdate: {
             type: DataTypes.DATE,
-            field: 'fecha_nacimiento' 
+            field: 'fecha_nacimiento'
         },
         dni: {
-            type: DataTypes.INTEGER,
-            field: 'dni'
+            type: DataTypes.INTEGER
         },
         profileImage: {
             type: DataTypes.STRING,
-            field: 'foto_perfil' 
+            field: 'foto_perfil'
         },
         createdAt: {
-            type: DataTypes.DATE,
-            field: 'createdAt'
+            type: DataTypes.DATE
         },
         updatedAt: {
-            type: DataTypes.DATE,
-            field: 'updatedAt'
+            type: DataTypes.DATE
         },
         deletedAt: {
-            type: DataTypes.DATE,
-            field: 'deletedAt'
+            type: DataTypes.DATE
         }
     };
 
-    let config = {
+    const config = {
         tableName: "usuarios",
-        timestamps: false
+        timestamps: true,
+        paranoid: true
     };
 
-    let User = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
     User.associate = function(models) {
         User.hasMany(models.Product, {
-            as: "products",
-            foreignKey: "id_usuario"  
+            as: "productos",  
+            foreignKey: "id_usuario"
         });
         User.hasMany(models.Comment, {
             as: "comments",
-            foreignKey: "userId"  
+            foreignKey: "id_usuarios"
         });
     };
 
