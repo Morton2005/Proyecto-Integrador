@@ -1,5 +1,5 @@
 let data = require('../database/models')
-let {Op} = require('Sequelize')
+let Op = data.Sequelize.Op;
 
 const controller = {
   index: function (req, res) {
@@ -22,10 +22,10 @@ const controller = {
         nombre_producto: { [Op.like]: `%${search}%` }
       },
       include: [
-        { association: 'usuario' },
+        { association: 'user' },
         {
-          association: 'comentarios',
-          include: [{ association: 'usuario' }]
+          association: 'comments',
+          include: [{ association: 'user' }]
         }
       ]
     })
@@ -43,8 +43,8 @@ const controller = {
         }
       })
       .catch(function (error) {
-        return res.send("Error");
-      });
+  return res.send("Error: " + error.message);
+});
   }
 };
 module.exports = controller;
